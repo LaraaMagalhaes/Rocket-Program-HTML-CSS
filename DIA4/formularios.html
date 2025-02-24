@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulários</title>
+</head>
+<body>
+    <h1>Formulários</h1>
+    <form>
+        <label for="texto">Texto</label><br>
+
+        <textarea name="texto" placeholder="Digite algum texto"></textarea><br>
+
+        <select name="profissao">
+            <option value="Desenvolvedor">Desenvolvedor</option>
+            <option value="Programador">Programador</option>
+            <option value="RH">RH</option>
+            <option value="Professor">Professor</option>
+            <option value="Contador">Contador</option>
+        </select><br>
+
+        <label>
+            <p>nome</p>
+            <input type="text" name="name" placeholder="Digite seu nome"/><br><BR></BR>
+        </label>
+
+        
+        <input type="email" name="email" placeholder="Digite seu email"/><br>
+        <input type="color" name="cor" placeholder="escolha cor"/><br>
+        <input type="password" name="senha" placeholder="Digite sua senha"/><br>
+        <input type="date" name="data" placeholder="Dia "/><br>
+        <input type="time" name="horário" placeholder="horário"/><br>
+        <input type="datetime-local" name="data e hr" placeholder="dia e horário"/><br>
+        <input type="month" name="mês" placeholder="Digite um mes"/><br>
+        <input type="number" name="numero" placeholder="Digite um numero"/><br>
+        <input type="range" name="range" min="0" max="1000" placeholder="Digite um numero"/><br>
+        <input type="search" name="buscas" placeholder="faça uma busca"/><br>
+        <input type="submit" name="submit" value="submitINPUT"/><br>
+        <input type="tel" name="telefone" placeholder="digite um telefone"/><br>
+        <input type="url" name="url" placeholder="digite um link"/><br>
+        <input type="week" name="week" placeholder="semana"/><br>
+        <input type="hidden" name="escondido" placeholder="dn funcionapq n aparece na tela"/><br>
+        
+        <label>
+            <input
+            type="radio" 
+            name="área" 
+            value="Front"
+            />
+            <SPan>front</SPan>
+        </label><br>
+        <label>
+            <input
+            type="radio" 
+            name="área" 
+            value="back"
+        />
+            <SPan>back</SPan>
+
+        </label><br>
+        <label>
+            <input
+            type="radio" 
+            name="área" 
+            value="full-stack"
+        />
+            <SPan>full-stack</SPan>
+
+        </label><br><br>
+       
+        <input type="checkbox" name="estilo-musical" value="blues"/>
+        <span>blues</span><br>
+        <input type="checkbox" name="estilo-musical" value="jazz"/>
+        <span>jazz</span><br>
+        <input type="checkbox" name="estilo-musical" value="rap"/>
+        <span>rap</span><br>
+        <input type="checkbox" name="estilo-musical" value="pop"/>
+        <span>pop</span><br>
+        <input type="checkbox" name="estilo-musical" value="rock"/>
+        <span>rock</span><br>
+
+        <label>
+            <p>escolha um arquivo</p>
+            <input type="file"/>
+        </label><br><br>
+        
+
+        <button type="button">button</button>
+        <button type="reset">reset</button>
+        <button type="submit">submit</button>
+
+
+    </form>
+    
+</body>
+</html>
