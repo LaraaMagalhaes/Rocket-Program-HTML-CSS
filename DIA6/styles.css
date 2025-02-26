@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: blueviolet;
+}
+#conteudo{
+    width: 80%;
+}
+.post{
+   padding: 30px; 
+}
+.cabecalho{
+
+}
+@font-face{
+    font-family: Sigmar-Regular ;
+    src: url(./assets/fonts/Sigmar-Regular.ttf);
+}
+body{
+    font-family: Sigmar-Regular;
+    font-weight: 50px;
+}
