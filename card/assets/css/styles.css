@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+    text-align: center; 
+}
+@font-face{
+    font-family: Playfair ;
+    src: url("../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+}
+body{
+    font-family: Playfair;
+    background-color:#EFEFEF;
+    
+}
+header{
+    
+    margin: 0 auto;
+    background-color: #EFEFEF;
+    padding: 20px;
+    margin-bottom: 0px;
+    
+}
+#rosto{
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center -15px;
+    margin-top: 150px;
+}
+h1{
+    font-family: 30px;
+}
+h2{
+    font-size: 18px;
+    font-weight: 200;
+    margin: 0 30%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: #EFEFEF;
+    margin: 0 auto;
+    gap: 6px;
+}
+.item{
+    display: inline;
+    background-color: #FF96B2;
+    color: #313131;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 50px;
+    margin: 0 30%;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; 
+    justify-content: center; 
+    margin: 0 auto;
+    gap: 6px;
+}
+#github img{
+    width: 70px;
+    margin-top: 23px;
+    border-radius: 5px;
+}
+#linkedin img{
+    width: 118px;   
+}
