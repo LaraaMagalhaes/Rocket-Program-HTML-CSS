@@ -1,27 +1,29 @@
-Rocket-Program
+# 🚀 Rocket-Program
 
-Projetos de Estudo de HTML e CSS
+## 📌 Projetos de Estudo de HTML e CSS
 
-Este repositório contém diversos projetos e códigos desenvolvidos durante meus estudos de HTML e CSS. O objetivo é manter uma coleção organizada de exemplos, desafios e pequenos projetos para aprimorar habilidades e consolidar conhecimento.
+Este repositório reúne projetos e desafios desenvolvidos ao longo dos estudos de **HTML** e **CSS**. O objetivo é manter uma coleção organizada para praticar e aperfeiçoar habilidades no desenvolvimento web.
 
-Estrutura do Repositório
+---
 
-Os projetos estão organizados em pastas individuais, cada uma representando um estudo específico ou desafio. Dentro de cada pasta de projeto, a estrutura segue o padrão abaixo:
+## 📂 Estrutura do Repositório
 
-/projeto-exemplo
-├── index.html        # Página principal do projeto
-├── assets/           # Pasta de recursos
-│   ├── css/         # Contém os estilos do projeto
-│   │   ├── styles.css
-│   ├── img/         # Contém as imagens utilizadas no projeto
-│   ├── outros-arquivos/ # Outras necessidades do projeto
+As pastas estão organizadas por projetos, e dentro de cada uma, os arquivos seguem a seguinte estrutura:
 
-A raiz do repositório também possui um arquivo index.html, que funciona como um portfólio, permitindo acesso a todos os projetos.
+- **[Index]**: Arquivo principal do projeto (`index.html`).
+- **[Assets]**: Pasta que contém os recursos necessários, incluindo:
+  - **[CSS]**: Arquivos de estilização do projeto (`styles.css`).
+  - **[Imagens]**: Recursos visuais utilizados no projeto.
+  - **[Outros Arquivos]**: Qualquer outro arquivo necessário para o projeto.
 
-Tecnologias Utilizadas
+A raiz do repositório possui um **index.html** que serve como um **portfólio**, fornecendo acesso a todos os projetos disponíveis.
 
-HTML: Linguagem de marcação para estruturação de conteúdo na web.
+---
 
-CSS: Estilização das páginas, definindo layout, cores e responsividade.
+## 🛠️ Tecnologias Utilizadas
 
-Este repositório é um registro da minha jornada de aprendizado e estará em constante atualização 🚀.
+- 🎨 **HTML**: Estrutura e organização do conteúdo.
+- 🎭 **CSS**: Estilização, layout e responsividade.
+
+Este repositório está em constante crescimento e aprimoramento. Qualquer contribuição ou sugestão é bem-vinda! 🚀
+
