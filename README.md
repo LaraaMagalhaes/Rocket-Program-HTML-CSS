@@ -1,17 +1,33 @@
-# Rocket-Program
-# Projetos de Estudo de HTML e CSS
+# 🚀 Rocket-Program
 
-Este repositório contém diversos projetos e códigos que desenvolvi enquanto estudava HTML e CSS. A ideia aqui é ter uma coleção organizada de exemplos, desafios e pequenos programas para melhorar minhas habilidades.
+## 📌 Projetos de Estudo de HTML e CSS
 
-## Estrutura do Repositório
+Este repositório reúne projetos e desafios desenvolvidos ao longo dos estudos de **HTML** e **CSS**. O objetivo é manter uma coleção organizada para praticar e aperfeiçoar habilidades no desenvolvimento web.
 
-. As pastas estão organizadas por dias do curso, e dentro de cada pasta, os códigos serão subdivididos de acordo com os temas e exercícios abordados em cada dia, como mostrado nos tópicos a seguir.
-- [Conteúdos]: Pequenos códigos relacionados com os conteúdos vistos no dia.
-- [Desafio 1]: Primeiro desafio, estipulado no próprio ludos pro.
-- [Desafio 2]: Segundo desafio, estipulado pela cintia no teams.
+---
 
+## 📂 Estrutura do Repositório
 
-## Tecnologias Utilizadas
+Os projetos estão organizados em pastas separadas. Dentro de cada uma, a estrutura segue o seguinte padrão:
 
-- **HTML**: A estrutura fundamental para criar páginas web, definindo a semântica e a organização do conteúdo.
-- **CSS**: A linguagem de estilização que permite transformar a aparência das páginas, criando layouts, cores e responsividade.
+```
+/projeto-exemplo
+├── index.html       # Página principal do projeto
+├── assets/          # Pasta de recursos
+│   ├── css/        # Arquivos de estilização
+│   │   ├── styles.css
+│   ├── img/        # Imagens utilizadas no projeto
+│   ├── outros-arquivos/  # Demais arquivos necessários
+```
+
+Na raiz do repositório, há um **index.html** que funciona como um **portfólio**, permitindo acesso a todos os projetos.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- 🎨 **HTML**: Estrutura e organização do conteúdo.
+- 🎭 **CSS**: Estilização, layout e responsividade.
+
+Este repositório está em constante crescimento e aprimoramento. Qualquer contribuição ou sugestão é bem-vinda! 🚀
+
