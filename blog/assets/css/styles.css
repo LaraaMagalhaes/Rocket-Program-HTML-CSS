@@ -81,21 +81,34 @@ header p{
     text-align: center;
 }
 #menu{
-    background-image: url("../images/rede.webp");
+    background-color: rgb(255, 201, 136);
     background-position: center;
     background-size: cover;
     color: white;
     margin-bottom: 5px;
     padding: 20px;  
     
+    
     width: 200px;
     position: fixed;
     top: 95px;
     bottom: 0;
-    left: 0;
-    right: 0;
     
 }
 main{
     padding: 132px 0 32px 200px;
+}
+nav{
+    height: 100%;
+}
+nav ul{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* align-items: normal; */
+    gap: 16px;
+}
+nav ul li{
+    background-color: black;
 }

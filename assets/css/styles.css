@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center; 
+}
+.portifolio{
+    background-color:#EFEFEF;
+    padding: 1 rem;
+    margin: 2rem;
+    text-align: center;
+    border: 4px solid black;
+}
+@font-face{
+    font-family: Playfair ;
+    src: url("../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+}
+body{
+    font-family: Playfair;   
+}
+header{
+    
+    margin: 0 auto;
+    background-color: #EFEFEF;
+    padding: 20px;
+    margin-bottom: 0px;
+    
+}
+#rosto{
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center -15px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+main {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+ul li {
+    font-size: 1.1rem;
+    margin-bottom: 3px; 
+    line-height: 1.4;
+    color: #000; 
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    background-color: #EFEFEF;
+    margin: 0 auto;
+    margin-top: -10px;
+    gap: 6px;
+}
+.item{
+    display: inline-block;
+    background-color: #afadad;
+    color: #313131;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 50px;
+    margin: 0 3%;
+}
