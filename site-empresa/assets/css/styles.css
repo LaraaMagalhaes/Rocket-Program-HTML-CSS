@@ -9,6 +9,8 @@
 }
 body{
     font-family: Playfair; 
+    display: grid;
+    grid-template-areas: 'header header header' 'menu box1 box2' 'footer footer footer';
 }
 
 header{
@@ -19,25 +21,32 @@ header{
     color: #331327;
     text-align: start; 
     font-size: larger;
-    position: fixed;
     left: 0;
-    right: 0;
-    
-}
+    right: 0; 
+    grid-area: header;
+} 
+
 .menu{
-    position: fixed;
     top: 95px; 
-    left: 0;
     width: 100%;
     background-color: #ffc1f7; 
     padding: 15px 10px; 
-    height: 50px; 
-    text-align: center;
+    min-height: 100vh; 
+    text-align: start;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: start;
     gap: 7px;
+    grid-area: menu;
 }
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 10px 10px 20px;
+}
+
 .item {
     display: inline-block;
     background-color: #f38ec6;
@@ -45,19 +54,14 @@ header{
     font-size: 16px;
     padding: 6px;
     border-radius: 4px;
-    width: 19.73%;
 }
-  main {
-    padding: 170px 10px 20px;
-  }
   h2 {
     margin-bottom: 20px;
     color: #444;
   }
+  
   .boxEsquerda {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-area: box1;
   }
   .post {
     border: 1px solid #ddd;
@@ -72,18 +76,14 @@ header{
     display: block;
     margin-bottom: 10px;
   }
-  #postss{
-    width: 45%; 
-  }
   .post a {
     color: inherit;
     text-decoration: none;
   }
   
+
   .boxDireita {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    grid-area: box2;
   }
   .produto {
     border: 1px solid #ddd;
@@ -100,9 +100,20 @@ header{
     margin: 0 auto 10px;
   }
   #produtoss{
-    position: fixed;
     bottom: 20px;
     top: 170px;
     right: 20px;
-    width: 45%; 
+    width: 100%; 
+  }
+
+  .footer{
+    background-color: #ffc1f7;
+    border-top: solid 1px #fa51d5;
+    grid-area: footer;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+  }
+  .footer a{
+    font-size: larger;
   }
