@@ -47,34 +47,17 @@ header{
     border-radius: 4px;
     width: 19.73%;
 }
-
-
   main {
     padding: 170px 10px 20px;
-  }
-  
-  .conteudo {
-    display: flex;
-    gap: 20px;
-  }
-  .posts, .produtos {
-    flex: 1;
-    background: #e5c5e9;
-    padding: 20px;
-    border-radius: 5px;
-    display: contents;
   }
   h2 {
     margin-bottom: 20px;
     color: #444;
   }
-  
-
   .boxEsquerda {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    /* justify-items: center; */
   }
   .post {
     border: 1px solid #ddd;
@@ -97,7 +80,6 @@ header{
     text-decoration: none;
   }
   
-
   .boxDireita {
     display: grid;
     grid-template-columns: 1fr 1fr;
