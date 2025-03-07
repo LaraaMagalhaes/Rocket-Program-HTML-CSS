@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    background-image: url('https://img.freepik.com/vetores-premium/fundo-bonito-com-coracoes-e-nuvem-vetor_363897-12688.jpg?semt=ais_hybrid');
+    font-family: sans-serif;
+    display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+  
+
+  /* layout das carat */
+  .flip-card-front {
+    width: 250px;
+    height: 350px;
+    background: rgb(252, 222, 247);
+    border: 2px solid #000;
+    border-radius: 15px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .corner {
+    position: absolute;
+    font-size: 30px;
+    color: #c62368;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .top-left {
+    top: 10px;
+    left: 15px;
+  }
+  .bottom-right {
+    bottom: 10px;
+    right: 15px;
+    transform: rotate(180deg);
+  }
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+    color: #c62368;
+  }
+
+
+
+
+  /* aqui q roda */
+  .flip-card {
+    background-color: transparent;
+    perspective: 1000px; 
+  }
+  .flip-card-inner {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    transition: transform 0.6s; 
+    transform-style: preserve-3d; 
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 250px;
+    height: 350px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    backface-visibility: hidden; 
+    background: rgb(252, 222, 247);
+  }
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
