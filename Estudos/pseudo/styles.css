@@ -1,0 +1,94 @@
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    gap: 10px;
+}
+.box{
+    background-color: rgba(137, 43, 226, 1);
+    width: 150px;
+    height: 150px;
+    box-shadow: 5px 5px 5px 2px rgba( 0, 0, 0, 0.5); 
+}
+.box:hover{ /*passar o mouse*/
+    background-color: rgb(43, 226, 43);
+}
+.box:active{ /*clicar*/
+    box-shadow: 0 0 5px 2px inset black; 
+}
+input:focus{
+    color: brown;
+}
+/* .box:first-child{
+    background-color: yellow;
+}
+.box:nth-child(3){
+    background-color: blue;
+}
+ da pra trocar o 3 por "even" para serem os pares e "odd" para os impares 
+.box:not(.special){
+    background-color: darkgoldenrod;
+} */ 
+
+.box:first-child{
+    background-color: yellow;
+}
+.box:first-child::before{
+    content: open-quote;
+}
+.box:first-child::after{
+    content: close-quote;
+}
+
+.quote::before{
+    content: open-quote;
+}
+.quote::after{
+    content: close-quote;
+}
+
+.speak{
+    border-radius: 50%;
+    padding: 16px;
+    position: relative;
+    box-shadow: none;
+}
+.speak::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: -2;
+    box-shadow: 5px 5px 5px 2px rgba( 0, 0, 0, 0.5);
+}
+.speak::after{
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(137, 43, 226, 1);
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transform: rotate(25deg) translate(-20px, -15px) skew(40deg);
+    box-shadow: 5px 5px 5px 2px rgba( 0, 0, 0, 0.5);
+}
+.speak:hover::after{
+    background: rgb(43, 226, 43) ;
+}
+.line::first-line{
+    background-color: aliceblue;
+}
+
+*::selection{
+    background-color: rgb(242, 245, 248);
+    color: brown;
+}/*pra qunado seecionar texto, ai muda a cor da seleção e a cor do texto*/
