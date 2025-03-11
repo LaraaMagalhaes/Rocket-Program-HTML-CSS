@@ -4,11 +4,19 @@
     text-align: center; 
 }
 .card{
-    background-color:#EFEFEF;
-    padding: 1 rem;
-    margin: 2rem;
+    background-color: rgba(255, 192, 203, 0.2);
+    padding: 1rem;
+    margin: 2rem auto;
     text-align: center;
-    border: 4px solid black;
+    border: 4px solid hotpink;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+    animation: fadeInCard 1s ease-in-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 500px;
+}
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
 }
 @font-face{
     font-family: Playfair ;
@@ -17,13 +25,11 @@
 body{
     font-family: Playfair;   
 }
-header{
-    
+header{ 
     margin: 0 auto;
     background-color: #EFEFEF;
     padding: 20px;
-    margin-bottom: 0px;
-    
+    margin-bottom: 0px;  
 }
 #rosto{
     border-radius: 100%;
@@ -33,9 +39,19 @@ header{
     object-position: center -15px;
     margin-top: 25px;
     margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#rosto:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.5);
 }
 h1{
     font-family: 30px;
+}
+h1::before {
+    content: "★ ";
+    color: hotpink;
+    font-weight: bold;
 }
 h2{
     font-size: 18px;
@@ -59,6 +75,13 @@ h2{
     padding: 6px;
     border-radius: 50px;
     margin: 0 30%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.item:hover {
+    background-color: hotpink;
+    color: #fff;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255, 192, 203, 0.5);
 }
 .links{
     display: flex;
@@ -76,3 +99,20 @@ h2{
 #linkedin img{
     width: 118px;   
 }
+#github img, #linkedin img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#github img:hover, #linkedin img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(255, 192, 203, 0.5);
+}
+@keyframes fadeInCard {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

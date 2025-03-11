@@ -11,6 +11,7 @@ body{
     font-family: Playfair; 
     display: grid;
     grid-template-areas: 'header header header' 'menu box1 box2' 'footer footer footer';
+    animation: fadeIn 1s ease-in-out;
 }
 
 header{
@@ -54,6 +55,11 @@ main {
     font-size: 16px;
     padding: 6px;
     border-radius: 4px;
+}
+h1::after {
+  content: " 🐾";
+  color: hotpink;
+  margin-left: 5px;
 }
   h2 {
     margin-bottom: 20px;
@@ -105,7 +111,21 @@ main {
     right: 20px;
     width: 100%; 
   }
-
+  .post, .produto {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .post:hover, .produto:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba(255, 192, 203, 0.3);
+  }
+  .post img, .produto img {
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.3);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .post img:hover, .produto img:hover {
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+    transform: scale(1.03);
+  }
   .footer{
     background-color: #ffc1f7;
     border-top: solid 1px #fa51d5;
@@ -116,4 +136,26 @@ main {
   }
   .footer a{
     font-size: larger;
+  }
+  .footer a:hover {
+    color: #ff1493; 
+    transition: color 0.3s ease;
+  }
+  .menu a.item {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  .menu a.item:hover {
+    background-color: #fa51d5; 
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.4);
+  }
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
