@@ -12,11 +12,13 @@
                 <h1>Blog Pet</h1>
             </div>
         </header>
+        <button class="menu-toggle">☰</button>
         <nav class="menu">
             <a href="./index.html" class="item">Nosso Site</a>
             <a href="./sobreNos.html" class="item">Sobre nós</a>
             <a href="./index.html" class="item">Blog Pet</a>
-            <a href="./index.html" class="item">Produtos</a>                <a href="./contato.html" class="item">Entre em contato</a>
+            <a href="./index.html" class="item">Produtos</a>                
+            <a href="./contato.html" class="item">Entre em contato</a>
         </nav>
         <main class="conteudo">
             <article id="postss">
@@ -98,5 +100,13 @@
         <footer class="footer">
             <a href="../index.html">Voltar para o portifólio</a>
         </footer>
+        <script>
+           const menuToggle = document.querySelector('.menu-toggle'); 
+           const menu = document.querySelector('.menu');
+
+           menuToggle.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
+        </script>
     </body>
 </html>

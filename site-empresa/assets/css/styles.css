@@ -13,6 +13,9 @@ body{
     grid-template-areas: 'header header header' 'menu box1 box2' 'footer footer footer';
     animation: fadeIn 1s ease-in-out;
 }
+.menu-toggle {
+  display: none;
+}
 
 header{
     background-color: #ffc1f7;
@@ -86,8 +89,6 @@ h1::after {
     color: inherit;
     text-decoration: none;
   }
-  
-
   .boxDireita {
     grid-area: box2;
   }
@@ -168,14 +169,27 @@ h1::after {
         padding: 20px 10px;
         text-align: center;
     }
-    .menu {
-        min-height: auto;
-        padding: 10px;
-        text-align: center;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+    .menu-toggle {
+      display: block;
+      background: #f38ec6;
+      color: #331327;
+      border: none;
+      font-size: 24px;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 10px auto;
+      cursor: pointer;
+  }
+  .menu {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    gap: 7px;
+    padding: 15px 10px;
+}
+.menu.active {
+  display: flex;
+}
     .menu a.item {
         margin: 5px;
         padding: 10px;
