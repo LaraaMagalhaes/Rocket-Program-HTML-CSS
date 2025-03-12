@@ -16,7 +16,11 @@ body{
 .menu-toggle {
   display: none;
 }
-
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 header{
     background-color: #ffc1f7;
     margin-bottom: 5px;
@@ -177,7 +181,6 @@ h1::after {
       font-size: 24px;
       padding: 10px;
       border-radius: 4px;
-      margin: 10px auto;
       cursor: pointer;
   }
   .menu {
