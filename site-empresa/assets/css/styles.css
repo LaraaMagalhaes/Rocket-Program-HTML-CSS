@@ -19,12 +19,13 @@ body{
 .header-content {
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: flex-start;
 }
 header{
     background-color: #ffc1f7;
     margin-bottom: 5px;
     padding: 40px 10px; 
+    min-height: 95px;
     height: 95px;
     color: #331327;
     text-align: start; 
@@ -171,8 +172,14 @@ h1::after {
     }
     header {
         padding: 20px 10px;
-        text-align: center;
+        text-align: left;
+        min-height: auto;
     }
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+  }
     .menu-toggle {
       display: block;
       background: #f38ec6;
