@@ -105,3 +105,30 @@ a:hover {
       transform: translateY(0);
     }
   }
+  @media screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+        margin: 10px;
+    }
+    .form-table, 
+    .form-table tbody, 
+    .form-table tr, 
+    .form-table td, 
+    .form-table th {
+        display: block;
+        width: 100%;
+    }
+    .form-table tr {
+        margin-bottom: 15px;
+    }
+    .form-table td, 
+    .form-table th {
+        margin-bottom: 5px;
+        padding: 5px 0;
+    }
+    button[type="submit"], 
+    button[type="reset"] {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

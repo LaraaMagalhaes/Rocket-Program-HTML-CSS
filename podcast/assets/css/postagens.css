@@ -130,3 +130,37 @@
     }
   }
   
+  @media screen and (max-width: 600px) {
+    .header-container {
+        padding: 15px;
+    }
+    .logo {
+        max-width: 200px;
+        margin-bottom: 15px;
+    }
+    .header-container h1 {
+        font-size: 24px;
+    }
+    .header-container h3 {
+        font-size: 16px;
+    }
+    .main-container {
+        flex-direction: column;
+    }
+    .sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+    .sidebar ul li a {
+        padding: 8px;
+        font-size: 14px;
+    }
+    .post {
+        min-width: 100%;
+        margin-bottom: 15px;
+        padding: 15px;
+    }
+}
+  

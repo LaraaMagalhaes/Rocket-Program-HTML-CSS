@@ -159,3 +159,44 @@ h1::after {
       transform: translateY(0);
     }
   }
+  @media screen and (max-width: 600px) {
+    body {
+        display: block;
+        margin: 10px;
+    }
+    header {
+        padding: 20px 10px;
+        text-align: center;
+    }
+    .menu {
+        min-height: auto;
+        padding: 10px;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .menu a.item {
+        margin: 5px;
+        padding: 10px;
+        font-size: 14px;
+    }
+    main.conteudo {
+        display: block;
+        padding: 10px;
+    }
+    .boxEsquerda,
+    .boxDireita {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .post,
+    .produto {
+        width: 100%;
+    }
+    .post img,
+    .produto img {
+        width: 100%;
+        height: auto;
+    }
+}

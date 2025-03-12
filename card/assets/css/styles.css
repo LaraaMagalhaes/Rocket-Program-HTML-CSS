@@ -116,3 +116,34 @@ h2{
       transform: translateY(0);
     }
   }
+@media screen and (max-width: 600px) {
+    .card {
+        margin: 1rem auto;
+        padding: 0.5rem;
+    }
+    header {
+        padding: 10px;
+    }
+    #rosto {
+        width: 150px;
+        height: 150px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    h2 {
+        margin: 0 10%;
+        font-size: 16px;
+    }
+    .item {
+        margin: 0 auto;
+        font-size: 14px;
+        padding: 4px;
+    }
+    #github img {
+        width: 50px;
+        margin-top: 15px;
+    }
+    #linkedin img {
+        width: 80px;
+    }
+}
