@@ -105,3 +105,23 @@ ul li {
     transform: scale(1.05);
     box-shadow: 0 0 10px rgba(255, 20, 147, 0.4);
 }
+@media screen and (max-width: 600px) {
+    .portifolio {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    header, main, .links {
+        padding: 10px;
+    }
+    #rosto {
+        width: 150px;
+        height: 150px;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .item {
+        font-size: 14px;
+        padding: 4px 6px;
+        margin: 0 2%;
+    }
+}
