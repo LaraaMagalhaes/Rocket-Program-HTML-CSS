@@ -11,6 +11,8 @@
 // console.dir(paragraphsEl);
 
 const contentEl = document.querySelector("#content")
+const menuEl = document.querySelector('.menu-button'); 
+const menu = document.querySelector('#menu');
 
 
 
@@ -125,7 +127,8 @@ const posts = [{
             A IA está cada vez mais presente no dia a dia, moldando a forma como
             vivemos, trabalhamos e nos comunicamos.
             </p>
-    `
+    `,
+    active: true
 },
 {
     id: "2",
@@ -217,7 +220,8 @@ const posts = [{
             Essencialmente, uma rede de computadores é o que conecta o mundo
             digital, permitindo trocas de dados rápidas e eficientes.
           </p>
-    `
+    `,
+    active: true
 },
 {
     id: "3",
@@ -305,7 +309,8 @@ const posts = [{
             estilo ou interatividade, é necessário usar CSS (para estilização) e
             JavaScript (para comportamento dinâmico).
           </p>
-    `
+    `,
+    active: true
 },
 {
     id: "4",
@@ -372,7 +377,8 @@ const posts = [{
             Com o CSS, você transforma páginas simples em designs únicos e
             agradáveis!
           </p>
-    `
+    `,
+    active: true
 },
 ];
 function addPost(post){
@@ -401,4 +407,8 @@ function addPost(post){
 //     addPost(posts[i]);
 // }
 
-posts.forEach(addPost)
+posts.filter(item => item.active).forEach(addPost)
+
+menuEl.addEventListener('click', () => {
+     menu.classList.toggle('active');
+});
