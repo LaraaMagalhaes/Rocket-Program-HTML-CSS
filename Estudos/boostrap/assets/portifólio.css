@@ -1,0 +1,55 @@
+
+.navbar {
+    background-color: #d63384 !important; /
+  }
+  
+  .navbar-brand,
+  .nav-link {
+    color: white !important;
+  }
+  
+  .nav-link:hover {
+    color: #ffd6eb !important;
+  }
+  
+  .btn-outline-primary {
+    border-color: #d63384;
+    color: #d63384;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #d63384;
+    color: white;
+  }
+  
+  .text-primary {
+    color: #d63384 !important;
+  }
+
+  .card {
+    border-radius: 16px;
+    border: 1px solid #f7d6e6;
+    box-shadow: 0 2px 10px rgba(214, 51, 132, 0.1);
+  }
+  
+  h1, h2, h3, h5 {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .fotoPerfil {
+    border: 3px solid #d63384 !important;
+  }
+  
+  .redeSocial img {
+    border-radius: 50%;
+    border: 2px solid #d63384;
+    padding: 4px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  footer {
+    background-color: #d63384 !important;
+    color: white;
+  }
+  

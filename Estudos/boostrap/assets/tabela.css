@@ -1,0 +1,48 @@
+:root{
+    --pink-dark:#d63384;
+    --pink-light:#ffc8dd;
+    --pink-soft:#ffe5f0;
+    --pink-border:#f72585;
+    --gray-bg:#fff0fa;
+  }
+  
+  body{
+    background:linear-gradient(180deg,var(--pink-light) 0%,#ffffff 45%);
+    min-height:100vh;
+  }
+  
+  .card-pink{
+    background:#ffffff;
+    border:none;
+    border-radius:1rem;
+    box-shadow:0 0 20px rgba(0,0,0,.15);
+  }
+  
+  .table-candy tbody > * > *{
+    background:var(--gray-bg);
+    color:#333;
+    border:1px solid var(--pink-border);
+  }
+  
+  .table-candy thead th.th-visualizar{background:#ff9ecf;}
+  .table-candy thead th.th-editar{background:#ff7bcd;}
+  .table-candy thead th.th-deletar{background:#ff5bbd;}
+  
+  .table-candy tbody tr:nth-child(odd) td{
+    background:var(--pink-soft);
+  }
+  
+  .table-candy tbody tr:hover td{
+    background:#ffd6e8;
+    color:#000;
+  }
+  
+  .btn-view{background:#ff9ecf;border:none;color:#000;}
+  .btn-edit{background:#ff7bcd;border:none;color:#000;}
+  .btn-delete{background:#ff5bbd;border:none;color:#000;}
+  .btn-view:hover,
+  .btn-edit:hover,
+  .btn-delete:hover{
+    filter:brightness(1.1);
+  }
+  
