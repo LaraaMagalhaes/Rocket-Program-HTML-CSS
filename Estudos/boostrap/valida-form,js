@@ -1,0 +1,25 @@
+(() => {
+    'use strict';
+  
+    const forms = document.querySelectorAll('.needs-validation');
+    const successAlert = document.getElementById('successAlert');
+  
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        successAlert.classList.add('d-none');
+  
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        } else {
+          event.preventDefault();
+          form.reset();
+          form.classList.remove('was-validated');
+          successAlert.classList.remove('d-none');
+        }
+  
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+  

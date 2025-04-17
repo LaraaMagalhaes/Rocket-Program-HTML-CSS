@@ -1,0 +1,53 @@
+:root {
+    --bs-primary: #e83e8c;
+  }
+  
+  body {
+    background-color: #fff0f5;
+  }
+  
+  .btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+  }
+  
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: #d63384;
+    border-color: #d63384;
+  }
+  
+  .navbar {
+    background-color: #ffe6f0 !important;
+  }
+  
+  .navbar-brand,
+  .nav-link {
+    color: #c2185b !important;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+    color: var(--bs-primary) !important;
+  }
+  
+  .badge.bg-danger,
+  .badge.bg-secondary {
+    background-color: var(--bs-primary) !important;
+  }
+  
+  .alert-success {
+    background-color: #ffe0ec;
+    border-color: #f5b7c3;
+    color: #9c1f4d;
+  }
+  
+  .card {
+    border-top: 4px solid var(--bs-primary);
+    border-radius: 1rem;
+  }
+  
+  .card-title {
+    color: var(--bs-primary);
+  }
+  

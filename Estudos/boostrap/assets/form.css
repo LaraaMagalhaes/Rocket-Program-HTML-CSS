@@ -1,0 +1,41 @@
+body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  
+  :root{
+    --bs-primary:#e83e8c;
+  }
+  
+  .btn-primary{
+    background-color:var(--bs-primary);
+    border-color:var(--bs-primary);
+  }
+  .btn-primary:hover,
+  .btn-primary:focus{
+    background-color:#d63384;
+    border-color:#d63384;
+  }
+  
+  .form-control:focus,
+  .form-select:focus{
+    border-color:var(--bs-primary);
+    box-shadow:0 0 0 .25rem rgba(232,62,140,.25);
+  }
+  .form-check-input:checked{
+    background-color:var(--bs-primary);
+    border-color:var(--bs-primary);
+  }
+  
+  .alert-success{
+    color:#842029;
+    background-color:#f8d7da;
+    border-color:#f5c2c7;
+  }
+  
+  .card{
+    border-top:4px solid var(--bs-primary);
+  }
+  
