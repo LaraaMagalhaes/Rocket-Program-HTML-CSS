@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Automação de Luzes</title>
+  <style>
+    body {
+      background: #ffeaf4;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 24px;
+      color: #4a003a;
+    }
+    h1, h2 { text-align: center; }
+    .comodo {
+      width: 180px;
+      height: 180px;
+      margin: 8px;
+      border-radius: 12px;
+      background: #c27b9d;     
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+      font-weight: bold;
+      box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    }
+    .comodo.acesa {
+      background: #ff4fa1;      
+      color: #fff;
+      box-shadow: 0 0 16px rgba(255,79,161,0.7);
+    }
+    .painel-botoes {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .painel-botoes button {
+      margin: 6px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
+      background: #ff99c8;
+      color: #4a003a;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.25s;
+    }
+    .painel-botoes button:hover {
+      background: #ff6fb1;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Central de Luzes</h1>
+  <div class="painel-botoes">
+    <button data-comodo="quarto">Liga / Desliga Quarto</button>
+    <button data-comodo="sala">Liga / Desliga Sala</button>
+    <button data-comodo="cozinha">Liga / Desliga Cozinha</button>
+  </div>
+  <h2 id="status">Clique em um botão para controlar a luz.</h2>
+  <div style="display:flex;gap:8px;justify-content:center">
+    <div id="quarto"   class="comodo">Quarto</div>
+    <div id="sala"     class="comodo">Sala</div>
+    <div id="cozinha"  class="comodo">Cozinha</div>
+  </div>
+
+
+
+  <script src="central.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
