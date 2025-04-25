@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="UserApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro Escolar</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="./js/app.js"></script>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+    .titulo {
+      color: #d63384;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body ng-controller="AppController">
+
+    <div class="container text-center">
+      <h1 class="titulo mb-4" ng-bind="mensagem"></h1>
+  
+      <p class="fs-5"><strong>Nome:</strong> {{ usuario.nome }}</p>
+      <p class="fs-5"><strong>Tipo:</strong> {{ usuario.tipo }}</p>
+  
+      <div class="d-flex justify-content-center gap-3 my-4">
+        <button class="btn btn-outline-primary" ng-click="usuario.tipo = 'Aluno'; usuario.nome = 'Maria'">Sou Aluno</button>
+        <button class="btn btn-outline-secondary" ng-click="usuario.tipo = 'Professor';  usuario.nome = 'João'">Sou Professor</button>
+      </div>
+  
+      <img 
+        ng-if="usuario.tipo === 'Aluno'" 
+        src="https://thumbor.novaescola.org.br/dwA_MSVH0jcpMzmrUNE1EBl9Paw=/nova-escola-producao.s3.amazonaws.com/tunxSkGu84NNEkscfMQUVeRzZD62xuejkA7ZhCD79kyDMjHzpWW2b7MgT62N/menina-faz-exercicio-no-caderno-na-escola.jpg" 
+        alt="Imagem do aluno" 
+        class="img-fluid">
+  
+      <img 
+        ng-if="usuario.tipo === 'Professor'" 
+        src="https://blog.unoeste.br/wp-content/uploads/2019/08/5-Profissao-Professor-scaled.jpg" 
+        alt="Imagem do professor" 
+        class="img-fluid">
+    </div>
+  
+  </body>
+  
+</html>

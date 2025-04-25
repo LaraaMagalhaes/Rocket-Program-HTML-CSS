@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="task-module"> <!-- Inicia o app Angular com o módulo 'task-module' -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="../Aula4/assets/css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-controller="task-controller"> <!-- Define o controller que comanda essa tela -->
+  <header id="header">
+    <section class="title">
+      <h1>Lista de Tarefas</h1>
+      <button type="button" ng-click="toggleModal()"> <!-- Abre o modal -->
+        <span class="material-icons">add</span>
+      </button>
+    </section>
+
+    <!-- Filtros de tarefas -->
+    <section class="filters">
+      <!-- Filtro: mostrar só tarefas completas -->
+      <label class="checkbox">
+        <input type="radio" name="filter" ng-model="selectedFilter" value="completed">
+        <span></span>
+        Completas
+      </label>
+
+      <!-- Filtro: mostrar só tarefas incompletas -->
+      <label class="checkbox">
+        <input type="radio" name="filter" ng-model="selectedFilter" value="incomplete">
+        <span></span>
+        Incompletas
+      </label>
+
+      <!-- Filtro: mostrar só tarefas de hoje -->
+      <label class="checkbox">
+        <input type="radio" name="filter" ng-model="selectedFilter" value="today">
+        <span></span>
+        Para Hoje
+      </label>
+    </section>
+  </header>
+
+  <!-- Conteúdo principal da lista -->
+  <main id="content">
+    <!-- Mensagem que aparece se não houver tarefas -->
+    <p class="empty" ng-show="!tasks.length">Nenhuma tarefa cadastrada</p>
+    <!-- Cada tarefa da lista -->
+    <article class="task" 
+             ng-repeat="task in tasks | filter:filterTasks" 
+             ng-class="{checked: task.checked}">
+
+      <!-- Checkbox para marcar tarefa como feita -->
+      <label class="checkbox">
+        <input type="checkbox" ng-model="task.checked" ng-change="toggleTaskChecked()">
+        <span></span>
+      </label>
+
+      <!-- Título da tarefa -->
+      <h3 ng-bind="task.title"></h3>
+
+      <!-- Data formatada -->
+      <p class="date" ng-bind="task.dateStr"></p>
+
+      <!-- Botão de deletar tarefa -->
+      <button type="button" ng-click="deleteTask(task)">
+        <span class="material-icons">delete</span>
+      </button>
+    </article>
+  </main>
+
+  <!-- Modal que aparece para adicionar uma nova tarefa -->
+  <aside class="modal-container" ng-if="modalActive">
+    <!-- Área que fecha o modal ao clicar fora -->
+    <button class="giant-close-button" ng-click="toggleModal()"></button>
+
+    <div class="modal">
+      <!-- Botão de fechar (ícone de X) -->
+      <button class="close" type="button" ng-click="toggleModal()">
+        <span class="material-icons">close</span>
+      </button>
+
+      <h2>Adicionar uma tarefa</h2>
+
+      <!-- Formulário para adicionar a tarefa -->
+      <form ng-submit="handleSubmitAddTask()">
+        <label>
+          <p>Nome</p>
+          <input type="text" placeholder="Nome da tarefa" ng-model="taskInput.title" required>
+        </label>
+
+        <label>
+          <p>Data</p>
+          <input type="date" ng-model="taskInput.date" required>
+        </label>
+
+        <button class="send" type="submit">Adicionar</button>
+      </form>
+    </div>
+  </aside>
+  <script src="../Aula4/assets/js/main.js"></script>
+</body>
+</html>
