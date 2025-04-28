@@ -60,10 +60,17 @@ app.controller('task-controller', function($scope) {
     if ($scope.selectedFilter === 'completed') return task.checked;
     if ($scope.selectedFilter === 'incomplete') return !task.checked;
     if ($scope.selectedFilter === 'today') {
-      const today = new Date().toLocaleDateString();
-      return task.dateStr === today;
+      const taskDate = new Date(task.date);
+      const start = new Date();
+      start.setHours(0, 0, 0, 0);
+    
+      const end = new Date();
+      end.setHours(23, 59, 59, 999);
+    
+      return taskDate.getTime() >= start.getTime() && taskDate.getTime() <= end.getTime();
     }
     return true; // Se não tiver filtro, mostra tudo
-  };
+    };
+    
 
 });

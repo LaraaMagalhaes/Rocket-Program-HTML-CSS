@@ -47,10 +47,10 @@
   <!-- Conteúdo principal da lista -->
   <main id="content">
     <!-- Mensagem que aparece se não houver tarefas -->
-    <p class="empty" ng-show="!tasks.length">Nenhuma tarefa cadastrada</p>
+    <p class="empty" ng-show="tasks.length === 0">Nenhuma tarefa cadastrada</p>
     <!-- Cada tarefa da lista -->
     <article class="task" 
-             ng-repeat="task in tasks | filter:filterTasks" 
+             ng-repeat="task in tasks | filter:filterTasks | orderBy:'checked'" 
              ng-class="{checked: task.checked}">
 
       <!-- Checkbox para marcar tarefa como feita -->
