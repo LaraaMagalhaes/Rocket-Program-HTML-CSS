@@ -1,76 +1,75 @@
-// Cria o app principal
-const app = angular.module('task-module', []);
+// Aqui estamos pegando o módulo já criado anteriormente no service
+window.app.controller('task-controller', function($scope, taskService) {
 
-// Cria o controller principal
-app.controller('task-controller', function($scope) {
+  // Pega a lista de tarefas do service e mostra na tela
+  $scope.tasks = taskService.getTasks();
 
-  // Lista de tarefas (pega do localStorage ou começa vazia)
-  $scope.tasks = JSON.parse(localStorage.getItem('tasks') || '[]');
-
-  // Modal aberto ou fechado
+  // Controla se o modal de adicionar tarefa está aberto ou não
   $scope.modalActive = false;
 
-  // Dados do formulário (novo título e data)
+  // Guarda os dados digitados no formulário antes de salvar
   $scope.taskInput = {
     title: '',
     date: ''
   };
 
-  // Filtro escolhido (completed, incomplete, today)
+  // Indica qual filtro de visualização o usuário selecionou (completas, incompletas ou de hoje)
   $scope.selectedFilter = null;
 
-  // Abre/fecha o modal
+  // Abre ou fecha o modal de adicionar tarefa
   $scope.toggleModal = () => {
     $scope.modalActive = !$scope.modalActive;
   };
 
-  // Adiciona uma nova tarefa
+  // Quando o formulário de adicionar tarefa for enviado
   $scope.handleSubmitAddTask = () => {
     const { title, date } = $scope.taskInput;
 
-    if (!title || !date) return; // Se faltar dados, não adiciona
+    // Se algum campo estiver vazio, não faz nada
+    if (!title || !date) return;
 
-    $scope.tasks.push({
-      id: Math.random().toString(36).substr(2, 9), // Gera um ID aleatório
-      title: title,
-      checked: false, // Começa não concluída
-      date: date,
-      dateStr: new Date(date).toLocaleDateString()
-    });
+    // Usa o service para adicionar a nova tarefa
+    taskService.addTask(title, date);
 
-    localStorage.setItem('tasks', JSON.stringify($scope.tasks)); // Salva no localStorage
-    $scope.toggleModal(); // Fecha o modal
+    // Atualiza a lista de tarefas com a nova
+    $scope.tasks = taskService.getTasks();
+
+    // Fecha o modal e limpa os campos do formulário
+    $scope.toggleModal();
     $scope.taskInput.title = '';
-    $scope.taskInput.date = ''; // Limpa o formulário
+    $scope.taskInput.date = '';
   };
 
-  // Atualiza o localStorage quando marcar/desmarcar tarefa
+  // Quando marcar ou desmarcar uma tarefa como concluída
   $scope.toggleTaskChecked = () => {
-    localStorage.setItem('tasks', JSON.stringify($scope.tasks));
+    taskService.toggleChecked(); // apenas salva no localStorage
+    $scope.tasks = taskService.getTasks(); // atualiza a lista na tela
   };
 
-  // Deleta uma tarefa
+  // Remove uma tarefa da lista
   $scope.deleteTask = (currentTask) => {
-    $scope.tasks = $scope.tasks.filter(task => task.id !== currentTask.id);
-    localStorage.setItem('tasks', JSON.stringify($scope.tasks));
+    taskService.removeTask(currentTask.id); // remove com base no ID
+    $scope.tasks = taskService.getTasks(); // atualiza a lista
   };
 
-  // Filtra tarefas conforme o filtro selecionado
+  // Filtra as tarefas conforme a opção selecionada pelo usuário
   $scope.filterTasks = function(task) {
     if ($scope.selectedFilter === 'completed') return task.checked;
     if ($scope.selectedFilter === 'incomplete') return !task.checked;
+
+    // Para o filtro "Hoje", usamos a lógica de data atual
     if ($scope.selectedFilter === 'today') {
       const taskDate = new Date(task.date);
       const start = new Date();
-      start.setHours(0, 0, 0, 0);
-    
+      start.setHours(0, 0, 0, 0); 
       const end = new Date();
-      end.setHours(23, 59, 59, 999);
-    
-      return taskDate.getTime() >= start.getTime() && taskDate.getTime() <= end.getTime();
-    }
-    return true; // Se não tiver filtro, mostra tudo
-    };
-    
+      end.setHours(23, 59, 59, 999); 
 
+      return taskDate.getTime() >= start.getTime() &&
+             taskDate.getTime() <= end.getTime();
+    }
+
+    // Se nenhum filtro estiver selecionado, mostra tudo
+    return true;
+  };
 });
