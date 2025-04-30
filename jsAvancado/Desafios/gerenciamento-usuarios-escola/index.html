@@ -4,105 +4,97 @@
   <meta charset="UTF-8">
   <title>Cadastro Escolar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-  <script src="./js/app.js"></script>
-
-  <style>
-    body {
-      background-color: #fff0f5;
-      font-family: 'Segoe UI', sans-serif;
-      padding: 2rem;
-    }
-    .titulo {
-      color: #d63384;
-      font-weight: bold;
-    }
-    .form-control, .btn {
-      margin-bottom: 1rem;
-    }
-    .usuario-item {
-      background: #f9f9f9;
-      padding: 1rem;
-      border: 2px solid #d63384;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .usuario-item strong {
-      color: #d63384;
-    }
-    .btn-rosa {
-      background-color: #d63384;
-      border: none;
-      color: white;
-    }
-    .btn-rosa:hover {
-      background-color: #bd296f;
-    }
-    .contador {
-      margin-top: 2rem;
-      text-align: center;
-      font-weight: bold;
-      color: #d63384;
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 <body ng-controller="AppController">
 
-  <div class="container text-center">
+  <div class="container py-4">
+    <h1 class="text-center mb-4">{{ mensagem }}</h1>
+    <form name="registroForm" novalidate ng-submit="salvarUsuario(registroForm)" class="card p-3 mb-4"
+          style="background-color:#fff0f5; border:2px solid #d63384;">
 
-    <h1 class="titulo mb-4">Bem-vindo ao sistema de cadastro escolar</h1>
-  
-    <div class="card p-3 mb-4" style="background-color: #ffe6f0; border: 2px solid #e06699;">
+      <h5 class="text-center text-danger mb-3">Cadastrar novo usuário</h5>
+
+      <input  name="nome"
+              type="text"
+              class="form-control mb-2"
+              placeholder="Nome"
+              ng-model="novoUsuario.nome"
+              required>
+      <small class="text-danger mb-2" ng-show="registroForm.nome.$touched && registroForm.nome.$error.required">
+        Nome é obrigatório
+      </small>
+
+      <input  name="email"
+              type="email"
+              class="form-control mb-2"
+              placeholder="E-mail"
+              ng-model="novoUsuario.email"
+              required>
+      <small class="text-danger mb-2" ng-show="registroForm.email.$touched && registroForm.email.$error.required">
+        E-mail é obrigatório
+      </small>
+      <small class="text-danger mb-2" ng-show="registroForm.email.$touched && registroForm.email.$error.email">
+        Formato de e-mail inválido
+      </small>
+
+      <select name="tipo"
+              class="form-select mb-2"
+              ng-model="novoUsuario.tipo"
+              required>
+        <option value="">Selecione o tipo</option>
+        <option value="Aluno">Aluno</option>
+        <option value="Professor">Professor</option>
+      </select>
+      <small class="text-danger mb-2" ng-show="registroForm.tipo.$touched && registroForm.tipo.$error.required">
+        Tipo é obrigatório
+      </small>
+
+      <button type="submit" class="btn w-100" style="background-color:#d63384; border:none;" ng-disabled="registroForm.$invalid || isSaving">
+        {{ isSaving ? 'Salvando…' : 'Adicionar Usuário' }}
+      </button>
+
+      <div class="text-center mt-2" ng-if="isSaving">
+        <em>Carregando…</em>
+      </div>
+
+      <div class="alert alert-success mt-2 py-1" ng-if="sucesso">
+        Usuário cadastrado com sucesso!
+      </div>
+    </form>
+
+    <div class="card p-3 mb-4" style="background-color:#ffe6f0; border:2px solid #e06699;">
       <h5 class="text-center text-danger mb-3">Buscar usuários</h5>
-  
       <input type="text" class="form-control mb-2" placeholder="Buscar por nome..." ng-model="filtro">
-  
       <select class="form-select mb-2" ng-model="filtroTipo">
         <option value="">Todos</option>
         <option value="Aluno">Aluno</option>
         <option value="Professor">Professor</option>
       </select>
     </div>
-  
-    <div class="card p-3 mb-4" style="background-color: #fff0f5; border: 2px solid #d63384;">
-      <h5 class="text-center text-danger mb-3">Cadastrar novo usuário</h5>
-  
-      <input type="text" class="form-control mb-2" placeholder="Nome" ng-model="novoUsuario.nome">
-  
-      <select class="form-select mb-2" ng-model="novoUsuario.tipo">
-        <option value="">Selecione o tipo</option>
-        <option value="Aluno">Aluno</option>
-        <option value="Professor">Professor</option>
-      </select>
-  
-      <button class="btn btn-primary w-100" style="background-color: #d63384; border: none;" ng-click="adicionarUsuario()">
-        Adicionar Usuário
-      </button>
-    </div>
-  
+
     <div class="list-group">
       <div class="list-group-item d-flex justify-content-between align-items-center mb-3"
            ng-repeat="usuario in usuarios | filter:filtro | filter:{tipo: filtroTipo}">
         <div>
-          <strong class="text-danger">{{ usuario.nome | uppercase }}</strong> - 
-          {{ usuario.tipo }} - 
+          <strong class="text-danger">{{ usuario.nome | uppercase }}</strong> -
+          {{ usuario.tipo }} -
+          {{ usuario.email }} -
           {{ usuario.dataCadastro | date:'dd/MM/yyyy' }}
         </div>
         <button class="btn btn-outline-danger btn-sm" ng-click="removerUsuario($index)">Remover</button>
       </div>
     </div>
-  
-    <div class="p-3 mt-4" style="background-color: #ffeeee; border-top: 2px solid #d63384;">
-      <p class="fw-bold text-danger">Total de Alunos: {{ (usuarios | filter:{tipo:'Aluno'}).length }}</p>
+
+    <div class="p-3 mt-4" style="background-color:#ffeeee; border-top:2px solid #d63384;">
+      <p class="fw-bold text-danger mb-1">Total de Alunos: {{ (usuarios | filter:{tipo:'Aluno'}).length }}</p>
       <p class="fw-bold text-danger">Total de Professores: {{ (usuarios | filter:{tipo:'Professor'}).length }}</p>
     </div>
-  
+
   </div>
 
+  <script src="./assets/js/app.js"></script>
 </body>
 </html>

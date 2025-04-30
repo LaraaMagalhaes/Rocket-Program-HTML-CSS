@@ -1,0 +1,40 @@
+body {
+    background-color: #fff0f5;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 2rem;
+  }
+  .titulo {
+    color: #d63384;
+    font-weight: bold;
+  }
+  .form-control, .btn {
+    margin-bottom: 1rem;
+  }
+  .usuario-item {
+    background: #f9f9f9;
+    padding: 1rem;
+    border: 2px solid #d63384;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .usuario-item strong {
+    color: #d63384;
+  }
+  .btn-rosa {
+    background-color: #d63384;
+    border: none;
+    color: white;
+  }
+  .btn-rosa:hover {
+    background-color: #bd296f;
+  }
+  .contador {
+    margin-top: 2rem;
+    text-align: center;
+    font-weight: bold;
+    color: #d63384;
+  }
+  
