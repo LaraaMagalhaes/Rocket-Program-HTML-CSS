@@ -1,0 +1,45 @@
+/* Tons de rosa e estilização dos campos */
+
+body {
+    background-color: #fff0f5;
+    font-family: Arial, sans-serif;
+  }
+  
+  .card {
+    border: 2px solid #f7c1dc;
+    border-radius: 16px;
+    background-color: #fff;
+  }
+  
+  .btn-pink {
+    background-color: #ff69b4;
+    color: white;
+    font-weight: bold;
+    border: none;
+    transition: background-color 0.3s;
+  }
+  
+  .btn-pink:hover {
+    background-color: #ff1493;
+  }
+  
+  .mensagem {
+    display: block;
+    margin-top: 5px;
+    font-weight: bold;
+  }
+  
+  input.valido {
+    border: 2px solid #90ee90 !important;
+    box-shadow: 0 0 5px #90ee90;
+  }
+  
+  input.invalido {
+    border: 2px solid #ff6b81 !important;
+    box-shadow: 0 0 5px #ff6b81;
+  }
+  
+  h2 {
+    color: #d63384;
+  }
+  
